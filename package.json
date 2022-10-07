@@ -1,0 +1,18 @@
+{
+  "name": "zenn",
+  "version": "1.0.0",
+  "description": "My Zenn docs",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yasuo Ozu <yasuo@ozu.email>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "zenn-cli": "^0.1.131"
+  },
+  "volta": {
+    "node": "16.17.1",
+    "npm": "8.19.2"
+  }
+}
