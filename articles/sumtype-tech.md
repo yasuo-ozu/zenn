@@ -6,6 +6,8 @@ topics: ["rust", "type-system", "zero-cost", "procedural-macros"]
 published: true
 ---
 
+https://crates.io/crates/sumtype
+
 # はじめに
 
 Rust で異なる型のイテレータや関数を同じ関数から返したいと思うことがあります。このような場合にエレガント、すなわちゼロコスト[^1]な解決法を提供する **sumtype** クレートを実装しました。

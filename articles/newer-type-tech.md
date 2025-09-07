@@ -6,6 +6,8 @@ topics: ["rust", "macro", "newtype"]
 published: true
 ---
 
+https://crates.io/crates/newer-type
+
 # はじめに
 
 この記事では、私が作成した`newer-type` crateについて紹介します。このcrateは、Rustのnewtypeパターンにおけるトレイト実装を自動化し、開発者の負担を大幅に軽減するライブラリです。
