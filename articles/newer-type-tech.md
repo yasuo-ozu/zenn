@@ -3,7 +3,7 @@ title: "Rustのnewtypeパターンを簡潔に：newer-type crateの紹介"
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["rust", "macro", "newtype"]
-published: false
+published: true
 ---
 
 # はじめに
