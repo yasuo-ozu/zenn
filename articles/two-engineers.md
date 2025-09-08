@@ -25,7 +25,7 @@ published: true
 
 # 私たちが作ったもの
 
-kenossさんは[thin_delegate](https://github.com/kenossss/thin_delegate)という素晴らしいcrateを作られました。このcrateは、proc macroを使って自動的に委譲コードを生成し、ジェネリクス、trait bounds、Generic Associated Types（GATs）、外部trait定義、カスタム委譲スキーム、そして部分的な手動実装まで幅広くサポートしています。
+kenossさんは[thin_delegate](https://github.com/kenoss/thin_delegate)という素晴らしいcrateを作られました。このcrateは、proc macroを使って自動的に委譲コードを生成し、ジェネリクス、trait bounds、Generic Associated Types（GATs）、外部trait定義、カスタム委譲スキーム、そして部分的な手動実装まで幅広くサポートしています。
 
 ```rust
 #[thin_delegate::register]
@@ -69,7 +69,7 @@ impl SayHello for String {
 pub struct MyName(String); // SayHelloが自動実装される
 ```
 
-両者とも、既存のcrateでは解決できない問題に取り組んでいました。kenossさんの[解説記事](https://kenossss.github.io/blog/2025-01-02-thin_delegate-1/)によれば、エルゴノミクスの高いAPI、明確なエラーメッセージ、柔軟なデフォルト委譲と例外処理、そしてtrait実装における最小限の制約という、まさに私が求めていたものと同じ特徴を持っていました。
+両者とも、既存のcrateでは解決できない問題に取り組んでいました。kenossさんの[解説記事](https://kenoss.github.io/blog/2025-01-02-thin_delegate-1/)によれば、エルゴノミクスの高いAPI、明確なエラーメッセージ、柔軟なデフォルト委譲と例外処理、そしてtrait実装における最小限の制約という、まさに私が求めていたものと同じ特徴を持っていました。
 
 # 合法な実装の追求
 
