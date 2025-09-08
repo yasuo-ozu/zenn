@@ -349,21 +349,6 @@ https://crates.io/crates/type-leak
 
 [type-leak](https://crates.io/crates/type-leak)は、マクロ向けの便利ライブラリとして開発しました。sumtypeに着想を受けて、コードを整理する目的で開発し、newer-typeでも使用しています。
 
-```rust
-// type-leakは内部ライブラリとして使用される
-use type_leak::TypeLeak;
-
-// マクロ開発での型情報の漏洩や伝播を助けるユーティリティ
-struct MyTypeInfo {
-    name: String,
-    generics: Vec<String>,
-}
-
-impl TypeLeak for MyTypeInfo {
-    // 型情報の漏洩と伝播メカニズムを定義
-}
-```
-
 ### newer-type: newtypeパターンの簡略化
 
 https://crates.io/crates/newer-type
