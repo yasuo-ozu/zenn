@@ -155,7 +155,7 @@ https://zenn.dev/yasuo_ozu/articles/sumtype-tech
 
 https://crates.io/crates/pyo3-commonize
 
-[pyo3-commonize](https://crates.io/crates/pyo3-commonize)は、derive macroとして開発しました。PyO3を使用する際に、複数のRust extension間で同じオブジェクトを共有したいという要望から生まれました。しかし、これは本質的に困難な課題でした。たとえデータ構造を表すcrateが同一でも、別々のextensionとしてビルドすると翻訳単位が異なるためです。さらに、別々のタイミングで異なるコンパイラでコンパイルされる可能性もあり、翻訳単位を超えたデータ構造の同一化は保証されません。
+[pyo3-commonize](https://crates.io/crates/pyo3-commonize)は、derive macroとして開発しました。PyO3を使用する際に、複数のRust extension間で同じオブジェクトを共有したいという要望から生まれました。しかし、これは本質的に困難な課題でした。たとえデータ構造を表すcrateが同一でも、別々のextensionとしてビルドすると翻訳単位が異なるためです。さらに、別々のタイミングで異なるコンパイラでコンパイルされる可能性もあり、翻訳単位を超えたデータ構造の同一化[^1][^2]は保証されません。
 
 ```rust
 use pyo3::prelude::*;
@@ -205,6 +205,11 @@ hasher.finish() as usize
 ```
 
 完璧ではありませんが、実用上は十分に機能します。私は「Python-Rustエコシステムにおいても型安全性と効率性を両立させるべきだ」と考えています。pyo3-commonizeは、技術的制約の中でも最大限の利便性を提供しようとした挑戦的な試みでした。
+
+
+[^1]: AIに削除されちゃった補足: ABIの安全性を考慮するならば abi_stable crate のStableApiトレイトの実装を求めるのが確実ですが、StableApiの実装は非現実的なので採用していません。
+
+[^2]: さらに補足: 安定なABIを提供するためにはデータのメモリレイアウトが等しいだけでは十分ではありません。例えば2つの翻訳単位ではメモリアロケータが同一とは限らないため、dropされる場合に問題が起こる可能性があります。これはVecのような基本的なコンテナ型でも起こるのが結構大変な点で、StableApiのVecではdrop grue (drop関数)自体をデータ中に埋め込むという手法を採用していたはずです。
 
 ### min-specialization: specializationの夢を現実に
 
